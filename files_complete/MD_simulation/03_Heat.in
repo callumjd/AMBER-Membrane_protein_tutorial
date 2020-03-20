@@ -1,0 +1,15 @@
+ heating LIPID 128 100K
+ &cntrl
+   imin=0, ntx=1, irest=0, 
+   ntc=2, ntf=2, tol=0.0000001,
+   nstlim=2500, ntt=3, gamma_ln=1.0,
+   ntr=1, ig=-1,
+   ntpr=100, ntwr=10000,ntwx=100,
+   dt=0.002,nmropt=1,
+   ntb=1,ntp=0,cut=10.0,ioutfm=1,ntxo=2,
+   restraint_wt=5.0, restraintmask='!:WAT,Na+,K+,Cl-',
+ /
+ &wt type='TEMP0', istep1=0, istep2=2500,
+                   value1=0.0, value2=100.0 /
+ &wt type='END' /
+

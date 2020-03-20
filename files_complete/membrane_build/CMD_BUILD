@@ -1,0 +1,6 @@
+~/.conda/envs/dabble/bin/packmol-memgen --pdb ../start_pdb/m2_prep.pdb --lipids POPC:CHL1 --ratio 9:1 --preoriented --salt --salt_c Na+ --saltcon 0.15 --dist 10 --dist_wat 15  --notprotonate --nottrim
+
+./shift_membrane.py -i ../start_pdb/m2_prep.pdb -m bilayer_m2_prep.pdb -o POPC_CHL_amber.pdb
+
+./vmd_box_dims.sh -i POPC_CHL_amber.pdb -s water
+

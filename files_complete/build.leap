@@ -1,0 +1,16 @@
+source leaprc.protein.ff19SB
+source leaprc.water.tip3p
+source leaprc.gaff2
+source leaprc.lipid20
+loadamberparams frcmod.ionsjc_tip3p
+loadamberparams ./ligand_params/missing_gaff2.frcmod
+loadoff ./ligand_params/IXO.off
+drug = loadpdb ./ligand_params/IXO.pdb
+receptor = loadpdb ./system_pdb/m2_prep.pdb 
+membrane = loadpdb ./membrane_build/POPC_CHL_amber.pdb
+rism_wat = loadpdb  ./system_pdb/m2_rism_sele.pdb
+system=combine{ receptor drug membrane rism_wat }
+set system box {84.868 85.023 93.938 }
+saveamberparm system m2_IXO.prmtop m2_IXO.inpcrd
+savepdb system m2_IXO.pdb
+quit

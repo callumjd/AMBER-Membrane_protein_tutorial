@@ -1,0 +1,11 @@
+antechamber -i ixo_ligand.mol2 -fi mol2 -o IXO.mol2 -fo mol2 -c bcc -s 2 -nc 1 -rn IXO -at gaff2
+
+parmchk2 -i IXO.mol2 -f mol2 -o missing_gaff2.frcmod -at gaff2
+
+antechamber -i IXO.mol2 -fi mol2 -o IXO.pdb -fo pdb
+
+tleap -f convert.leap
+
+RISM:
+http://dansindhikara.com/Tutorials/Entries/2012/1/1_Using_3D-RISM_and_PLACEVENT.html
+
