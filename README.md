@@ -118,7 +118,7 @@ This will output:
 >  
 >Shifted protein 2 COM: -6.487 5.690 -3.809  
 >  
->Writing test.pdb membrane, shifted by  7.142 -5.707 0.000  
+>Writing POPC_CHL_amber.pdb membrane, shifted by  7.142 -5.707 0.000  
 >  
 >Box X,Y,Z: 84.868 85.023 93.938  
 >  
