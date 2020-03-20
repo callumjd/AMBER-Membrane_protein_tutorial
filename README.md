@@ -46,7 +46,7 @@ We are still in the "system_pdb" directory:
 
 > cd ./files_clean/system_pdb 
 
-We need to prepare the protein for molecular dynamics with AMBER. You may have your own workflow / preferences here. I am typically using CCG MOE protein preparation wizard to achieve the following: 
+We need to prepare the M2 receptor for molecular dynamics with AMBER. You may have your own workflow / preferences here. I am typically using CCG MOE protein preparation wizard to achieve the following: 
 
 * Fill missing atoms
 * Cap termini
@@ -78,5 +78,85 @@ Finally, an important part of system preparation is placement of initial water m
 You will have to remove waters that are placed in the membrane region. Prepared waters are provided in "./system_pdb/m2_rism_sele.pdb".
 
 # Step 3: Building the membrane
+
+Now that we have prepared files for the M2 receptor, agonist iperoxo and initial water placement, we need to build the membrane simulation box.
+
+> cd ../membrane_build
+
+We then run PACKMOL-Memgen using the "m2_prep.pdb" file as input:
+
+> packmol-memgen --pdb ../system_pdb/m2_prep.pdb --lipids POPC:CHL1 --ratio 9:1 --preoriented --salt --salt_c Na+ --saltcon 0.15 --dist 10 --dist_wat 15 --notprotonate --nottrim
+
+Take care to understand each of the flags. Here we ask for a mixed POPC/CHOL membrane, but you may want plain POPC, or a different lipid composition. You can run packmol-memgen --help to find out about each flag. Briefly:
+
+* "--pdb ../system_pdb/m2_prep.pdb": input receptor PDB
+* "--lipids POPC:CHL1": build a mixed POPC/CHOL membrane
+* "--ratio 9:1": POPC/CHOL ratio of 9:1 
+* "--preoriented": the OPM coordinates are already orientated along the z-axis, for membrane building
+* "--salt --salt_c Na+ --saltcon 0.15": Add 0.15 M of NaCl salt to the water layer
+* "--dist 10": lipid buffer of 10 A around the receptor
+* "--dist_wat 15": water layer thickness of 15 A
+* "--notprotonate --nottrim": do not process input receptor PDB file (since we have already prepared this)
+
+PACKMOL-Memgen should output a "bilayer_m2_prep.pdb" file, which contains our receptor and the prepared membrane+water box.
+
+This final step is personal preference: PACKMOL-Memgen often slightly shifts the coordinates of the overall system versus the input receptor. Typically, I prefer to have the initial prepared receptor, ligand coordinates and separately, the membrane box PDB.
+
+So, we need to extract just the membrane+water from "bilayer_m2_prep.pdb" and reset the coordinates to match those of "../system_pdb/m2_prep.pdb". You can use the "shift_membrane.py" script for this:
+
+> ./shift_membrane.py -i ../start_pdb/m2_prep.pdb -m bilayer_m2_prep.pdb -o POPC_CHL_amber.pdb
+
+The settings here:
+
+* "-i ../start_pdb/m2_prep.pdb": our original receptor PDB
+* "-m bilayer_m2_prep.pdb": output membrane system from PACKMOL-Memgen
+* "-o POPC_CHL_amber.pdb": name of the output file for final shifted membrane box
+
+This will output:
+
+>Original protein 1 COM: 0.655 -0.017 -3.809  
+>  
+>Shifted protein 2 COM: -6.487 5.690 -3.809  
+>  
+>Writing test.pdb membrane, shifted by  7.142 -5.707 0.000  
+>  
+>Box X,Y,Z: 84.868 85.023 93.938  
+>  
+
+Here, the final line gives us the box dimensions of the water layer.
+
+One note: since our iperoxo ligand has a +1 charge, we need to delete a single Na+ ion from the "POPC_CHL_amber.pdb" PDB file. You can use a text editor to simply remove the first Na+.
+
+# Step 4: Build the AMBER parameter and topology file with leap
+
+Now, we have all the files needed to build the parameter and topology file with tleap:
+
+> cd ./files_clean
+
+The "build.leap" file is included. You will see that we have put the box dimensions from the previous step in here:
+
+> set system box {84.868 85.023 93.938 }
+
+Take care to understand each line. It is similar to building other systems with AMBER. Now, run tleap:
+
+> tleap -f build.leap
+
+This should output "m2_IXO.prmtop" and "m2_IXO.inpcrd".
+
+A few steps with Parmed, again as personal preference. Since AMBER resets the residue numbering, it will not correspond to the original PDB information. You can add PDB information to a topology with Parmed, so that output PDBs saved from the simulation have residue numbering matching the initial PDB file:
+
+> parmed -i parmed_resi.in
+
+We also create a prmtop ready for hydrogen mass repartitioning simulations, allowing a 4 fs timestep (https://pubs.acs.org/doi/10.1021/ct5010406):
+
+> parmed -i hmass_parmed.in
+
+With this, we are ready for the MD simulation step.
+
+# Step 5: GPCR molecular dynamics simulation and analysis
+
+Go into the "MD_simulation" directory:
+
+> cd ./MD_simulation
 
 
