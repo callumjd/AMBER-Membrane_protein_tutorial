@@ -131,7 +131,7 @@ One note: since our iperoxo ligand has a +1 charge, we need to delete a single N
 
 Now, we have all the files needed to build the parameter and topology file with tleap:
 
-> cd ./files_clean
+> cd ../../files_clean
 
 The "build.leap" file is included. You will see that we have put the box dimensions from the previous step in here:
 
@@ -159,4 +159,17 @@ Go into the "MD_simulation" directory:
 
 > cd ./MD_simulation
 
+This folder contains input files and a bash script for the each step on a single GPU with pmemd.cuda. You may need to modify for your own machine / cluster.
+
+The simulation steps are as follows:
+
+* 01_Min.in : very short minimization on CPU with pmemd. This is advised for membrane systems, which often have bad clashes of lipid chains to resolve. The CPU code is more robust in dealing with these than the GPU
+* 02_Min2.in : longer minimization on GPU
+* 03_Heat.in, 04_Heat2.in : heating to 303 K, with restraints on M2 receptor, iperoxo, membrane lipids
+* 05_Back.in : run 1 ns NPT with restraints on receptor backbone atoms, iperoxo
+* 06_Calpha.in : run 1 ns NPT with restraints on receptor carbon-alpha atoms, iperoxo
+* 07_Prod.in : run 100 ns NPT equilibration, all restraints removed
+* 08_Long.in : run 0.5 us NPT production, with Monte Carlo barostat and hydrogen mass repartitioning
+
+Once simulations are complete, we can do some simple analysis of the M2 receptor RMSD and iperoxo ligand RMSD.
 
