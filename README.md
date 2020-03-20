@@ -145,8 +145,8 @@ This should output "m2_IXO.prmtop" and "m2_IXO.inpcrd".
 
 **Important:** The "m2_prep.pdb" contains lines defining disulfide bridges: 
 
-LINK         SG  CYX A  96                 SG  CYX A 176     1555   1555  2.03
-LINK         SG  CYX A 413                 SG  CYX A 416     1555   1555  2.03
+LINK         SG  CYX A  96                 SG  CYX A 176     1555   1555  2.03  
+LINK         SG  CYX A 413                 SG  CYX A 416     1555   1555  2.03  
 
 If you prepared your receptor in a different way, you will have to add lines into the tleap command to define these bonds.
 
