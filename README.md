@@ -66,7 +66,8 @@ Again, I am using MOE to add hydrogens to the initial ligand coordinates, set ch
 
 We then determine partial charges and atom types for GAFF2 using antechamber:
 
-> antechamber -i ixo_ligand.mol2 -fi mol2 -o IXO.mol2 -fo mol2 -c bcc -s 2 -nc 1 -rn IXO -at gaff2
+> antechamber -i ixo_ligand.mol2 -fi mol2 -o IXO.mol2 -fo mol2 -c bcc -s 2 -nc 1 -rn IXO -at gaff2  
 > parmchk2 -i IXO.mol2 -f mol2 -o missing_gaff2.frcmod -at gaff2
+
 
 
