@@ -27,7 +27,9 @@ This tutorial describes how to construct and simulate a GPCR membrane protein sy
 Start by downloading the coordinates from the Orientations of Proteins in Membranes (OPM) database:
 
 > cd ./files_clean/system_pdb 
+
 > Download OPM file 4MQS: https://opm.phar.umich.edu/proteins/2304 
+
 > mv ~./Downloads/4mqs.pdb 4mqs_OPM.pdb
 
 
