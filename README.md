@@ -143,12 +143,12 @@ Take care to understand each line. It is similar to building other systems with 
 
 This should output "m2_IXO.prmtop" and "m2_IXO.inpcrd".
 
-*Important: *
-The 
+**Important:** The "m2_prep.pdb" contains lines defining disulfide bridges: 
 
 LINK         SG  CYX A  96                 SG  CYX A 176     1555   1555  2.03
 LINK         SG  CYX A 413                 SG  CYX A 416     1555   1555  2.03
 
+If you prepared your receptor in a different way, you will have to add lines into the tleap command to define these bonds.
 
 A few steps with Parmed, again as personal preference. Since AMBER resets the residue numbering, it will not correspond to the original PDB information. You can add PDB information to a topology with Parmed, so that output PDBs saved from the simulation have residue numbering matching the initial PDB file:
 
