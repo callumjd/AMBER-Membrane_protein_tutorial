@@ -30,7 +30,7 @@ Start by downloading the coordinates from the Orientations of Proteins in Membra
 > Download OPM file 4MQS: https://opm.phar.umich.edu/proteins/2304   
 > mv ~./Downloads/4mqs.pdb 4mqs_OPM.pdb  
 
-This database provides GPCR structures such that they are pre-aligned for membrane-embedding, and show dummy coordinates as to where the membrane starts and ends.
+The OPM database provides GPCR structures such that they are pre-aligned for membrane-embedding, and show dummy coordinates as to where the membrane starts and ends.
 
 This structure of the M2 receptor has chain A, the receptor, and chain B, a G-protein mimetic camelid antibody fragment. It also has the agonist ligand iperoxo. In this case, we will simulation just the M2 receptor (no G-protein or mimetic) with the agonist iperoxo.
 
@@ -66,5 +66,17 @@ We then determine partial charges and atom types for GAFF2 using antechamber:
 > antechamber -i ixo_ligand.mol2 -fi mol2 -o IXO.mol2 -fo mol2 -c bcc -s 2 -nc 1 -rn IXO -at gaff2  
 > parmchk2 -i IXO.mol2 -f mol2 -o missing_gaff2.frcmod -at gaff2
 
+As a personal preferene, I typically generate a "clean" ligand PDB file and AMBER .off file containing force field parameters:
+
+> antechamber -i IXO.mol2 -fi mol2 -o IXO.pdb -fo pdb  
+> tleap -f convert.leap  # this step simply converts the IXO.mol2 to IXO.off file
+
+Finally, an important part of system preparation is placement of initial water molecules. Again, you may have your own method here. Typically, I follow this workflow for 3D-RISM placement of waters:
+
+* 3D-RISM: http://dansindhikara.com/Tutorials/Entries/2012/1/1_Using_3D-RISM_and_PLACEVENT.html
+
+You will have to remove waters that are placed in the membrane region. Prepared waters are provided in "./system_pdb/m2_rism_sele.pdb".
+
+# Step 3: Building the membrane
 
 
