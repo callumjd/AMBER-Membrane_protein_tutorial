@@ -1,6 +1,6 @@
 # AMBER-Membrane_protein_tutorial
 
-Tutorial on the setup and simulation of a membrane protein with AMBER Lipid20 and packmol-memgen
+Tutorial on the setup and simulation of a membrane protein with AMBER Lipid20 and PACKMOL-Memgen
 
 *Disclaimer: I hope this tutorial will be useful to others wishing to run molecular dynamics simulations of membrane proteins with AMBER. However, it is as much for my own reference as a guide to others. There are a number of ways to construct such systems for AMBER, including but not limited to: AMBAT, charmm-gui, DABBLE. In this case, we use the recently released PACKMOL-Memgen: https://pubs.acs.org/doi/10.1021/acs.jcim.9b00269*
 
@@ -28,7 +28,7 @@ Start by downloading the coordinates from the Orientations of Proteins in Membra
 
 > cd ./files_clean/system_pdb   
 > Download OPM file 4MQS: https://opm.phar.umich.edu/proteins/2304   
-> mv ~./Downloads/4mqs.pdb 4mqs_OPM.pdb  
+> mv ~/Downloads/4mqs.pdb 4mqs_OPM.pdb  
 
 The OPM database provides GPCR structures such that they are pre-aligned for membrane-embedding, and show dummy coordinates as to where the membrane starts and ends.
 
@@ -142,6 +142,13 @@ Take care to understand each line. It is similar to building other systems with 
 > tleap -f build.leap
 
 This should output "m2_IXO.prmtop" and "m2_IXO.inpcrd".
+
+*Important: *
+The 
+
+LINK         SG  CYX A  96                 SG  CYX A 176     1555   1555  2.03
+LINK         SG  CYX A 413                 SG  CYX A 416     1555   1555  2.03
+
 
 A few steps with Parmed, again as personal preference. Since AMBER resets the residue numbering, it will not correspond to the original PDB information. You can add PDB information to a topology with Parmed, so that output PDBs saved from the simulation have residue numbering matching the initial PDB file:
 
