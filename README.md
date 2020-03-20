@@ -58,4 +58,15 @@ We need to prepare the protein for molecular dynamics with AMBER. You may have y
 
 I will not go further on the preparation here - needless to say, you need a prepared receptor for further simulation steps. The output from MOE is provided as "m2_prep.pdb". Side-chain protonation states are set to their dominate form at pH 7.4, except ASP69 inside the helical bundle, which is charge neutral ("ASH" residue name, as AMBER convention). ASP69 is protonated during the entire photocycle in rhodopsin (https://www.pnas.org/content/90/21/10206.long).
 
- 
+Now we need to prepare the ixperoxo agonist.
+
+> cd ../ligand_params
+
+Again, I am using MOE to add hydrogens to the initial ligand coordinates, set charge state, correct the bond orders. The output is "ixo_ligand.mol2". You will need to do similar, using a method of your choice.
+
+We then determine partial charges and atom types for GAFF2 using antechamber:
+
+> antechamber -i ixo_ligand.mol2 -fi mol2 -o IXO.mol2 -fo mol2 -c bcc -s 2 -nc 1 -rn IXO -at gaff2
+> parmchk2 -i IXO.mol2 -f mol2 -o missing_gaff2.frcmod -at gaff2
+
+
