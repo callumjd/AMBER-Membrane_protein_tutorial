@@ -77,6 +77,10 @@ Finally, an important part of system preparation is placement of initial water m
 
 * 3D-RISM: http://dansindhikara.com/Tutorials/Entries/2012/1/1_Using_3D-RISM_and_PLACEVENT.html
 
+A more recent tutorial is also available:
+
+* 3D-RISM and MOFT: http://ambermd.org/tutorials/advanced/tutorial34/index.html
+
 You will have to remove waters that are placed in the membrane region. Prepared waters are provided in "./system_pdb/m2_rism_sele.pdb".
 
 # Step 3: Building the membrane
@@ -181,4 +185,11 @@ The simulation steps are as follows:
 * 08_Long.in : run 0.5 us NPT production, with Monte Carlo barostat and hydrogen mass repartitioning
 
 Once simulations are complete, we can do some simple analysis of the M2 receptor RMSD and iperoxo ligand RMSD.
+
+> cpptraj m2_IXO.prmtop<image.trajin  
+> cpptraj m2_IXO.prmtop<prot_rmsd.trajin  
+> cpptraj m2_IXO.prmtop<lig_rmsd.trajin  
+
+This creates an imaged trajectory from the 07_Prod and 08_Long steps, then determines the protein RMSD and ligand RMSD over the course of these simulation steps. We can plot the results as shown:
+
 
