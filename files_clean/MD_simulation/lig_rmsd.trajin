@@ -1,0 +1,5 @@
+reference 01_Min.rst
+loadcrd image.nc prodrun
+crdaction prodrun rms reference @CA,C,N
+crdaction prodrun rmsd lig_rmsd ":IXO & !@/H" first out lig_rmsd.dat nofit
+go

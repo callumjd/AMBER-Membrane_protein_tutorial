@@ -1,0 +1,4 @@
+reference 01_Min.rst
+loadcrd image.nc prodrun
+crdaction prodrun rms reference @CA out prot_rmsd.dat
+go

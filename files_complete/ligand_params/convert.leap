@@ -1,5 +1,0 @@
-source leaprc.gaff2
-loadamberparams missing_gaff2.frcmod
-IXO=loadmol2 IXO.mol2
-saveoff IXO IXO.off
-quit

@@ -1,8 +1,8 @@
  pro 500 ns HMass LIPID 303K
  &cntrl
-   imin=0, ntx=1, irest=0, 
+   imin=0, ntx=5, irest=1 ,
    ntc=2, ntf=2, tol=0.0000001,
-   nstlim=125000000, ntt=3, gamma_ln=1.0,
+   nstlim=125000000, ntt=3, gamma_ln=2.0,
    temp0=303.0,
    ntpr=2500, ntwr=250000, ntwx=2500,
    dt=0.004, ig=-1,

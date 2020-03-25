@@ -1,6 +1,6 @@
 minimize
  &cntrl
-  imin=1,maxcyc=500,ncyc=250,
+  imin=1,maxcyc=1000,ncyc=500,
   ntb=1,ntp=0,
   ntf=1,ntc=1,
   ntpr=50,
