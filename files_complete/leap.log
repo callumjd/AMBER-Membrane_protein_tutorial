@@ -1,0 +1,2319 @@
+log started: Wed Mar 25 17:02:09 2020
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /usr/local/amber18/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /usr/local/amber18/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /usr/local/amber18/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /usr/local/amber18/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /usr/local/amber18/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /usr/local/amber18/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /usr/local/amber18/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /usr/local/amber18/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /usr/local/amber18/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /usr/local/amber18/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /usr/local/amber18/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /usr/local/amber18/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /usr/local/amber18/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> source leaprc.gaff2
+----- Source: /usr/local/amber18/dat/leap/cmd/leaprc.gaff2
+----- Source of /usr/local/amber18/dat/leap/cmd/leaprc.gaff2 done
+>> logFile leap.log
+log started: Wed Mar 25 17:02:10 2020
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cs"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "n5"  "N" "sp3" }
+>> 	{ "n6"  "N" "sp3" }
+>> 	{ "n7"  "N" "sp3" }
+>> 	{ "n8"  "N" "sp3" }
+>> 	{ "n9"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "ns"  "N" "sp2" }
+>> 	{ "nt"  "N" "sp2" }
+>> 	{ "nu"  "N" "sp2" }
+>> 	{ "nv"  "N" "sp2" }
+>> 	{ "nx"  "N" "sp3" }
+>> 	{ "ny"  "N" "sp3" }
+>> 	{ "nz"  "N" "sp3" }
+>> 	{ "n+"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff2.dat
+Loading parameters: /usr/local/amber18/dat/leap/parm/gaff2.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 2.11, May 2016)
+> 
+> source leaprc.lipid20
+----- Source: /usr/local/amber18/dat/leap/cmd/leaprc.lipid20
+----- Source of /usr/local/amber18/dat/leap/cmd/leaprc.lipid20 done
+>> #
+>> # Set log file
+>> #
+>> logFile leap.log
+log started: Wed Mar 25 17:02:10 2020
+
+Log file: ./leap.log
+>> #
+>> # leaprc for loading the Lipid20 v1.0 force field
+>> #       
+>> # Load atom type hybridizations
+>> #
+>> addAtomTypes {
+>>     { "cA"  "C" "sp3" }
+>>     { "cB"  "C" "sp2" }
+>>     { "cC"  "C" "sp2" }
+>>     { "cD"  "C" "sp3" }
+>>     { "hA"  "H" "sp3" }
+>>     { "hB"  "H" "sp3" }
+>>     { "hE"  "H" "sp3" }
+>>     { "hL"  "H" "sp3" }
+>>     { "hN"  "H" "sp3" }
+>>     { "hO"  "H" "sp3" }
+>>     { "hS"  "H" "sp3" }
+>>     { "hX"  "H" "sp3" }
+>>     { "nA"  "N" "sp3" }
+>>     { "nE"  "N" "sp3" }
+>>     { "nN"  "N" "sp2" }
+>>     { "oC"  "O" "sp2" }
+>>     { "oH"  "O" "sp3" }
+>>     { "oO"  "O" "sp2" }
+>>     { "oP"  "O" "sp2" }
+>>     { "oS"  "O" "sp3" }
+>>     { "oT"  "O" "sp3" }
+>>     { "pA"  "P" "sp3" }
+>> }
+>> #
+>> # Load the Lipid20 parameter set.
+>> #
+>> lipid20 = loadamberparams lipid20.dat 
+Loading parameters: /usr/local/amber18/dat/leap/parm/lipid20.dat
+Reading title:
+AMBER Lipid20 v1.0 C. J. Dickson, R.C. Walker, I.R. Gould.
+>> #
+>> # Load the Lipid20 master lib file.
+>> #
+>> loadoff lipid20.lib
+Loading library: /usr/local/amber18/dat/leap/lib/lipid20.lib
+Loading: AR
+Loading: CHL
+Loading: DHA
+Loading: LAL
+Loading: MY
+Loading: OL
+Loading: PA
+Loading: PC
+Loading: PE
+Loading: PGR
+Loading: PH-
+Loading: PS
+Loading: SA
+Loading: SM
+Loading: ST
+>> 
+> 
+> loadamberparams frcmod.ionsjc_tip3p
+Loading parameters: /usr/local/amber18/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+> loadamberparams ./ligand_params/missing_gaff2.frcmod
+Loading parameters: ./ligand_params/missing_gaff2.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> loadoff ./ligand_params/IXO.off
+Loading library: ./ligand_params/IXO.off
+Loading: IXO
+> drug = loadpdb ./ligand_params/IXO.pdb
+Loading PDB file: ./ligand_params/IXO.pdb
+Matching PDB residue names to LEaP variables.
+  total atoms in file: 31
+> receptor = loadpdb ./system_pdb/m2_prep.pdb 
+Loading PDB file: ./system_pdb/m2_prep.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue LYS, term: Terminal/beginning, seq. number: 0 to: NLYS.
+Mapped residue MET, term: Terminal/last, seq. number: 278 to: CMET.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Illegal CONECT record in pdb file
+
+/usr/local/amber18/bin/teLeap: Warning!
+Illegal CONECT record in pdb file
+
+/usr/local/amber18/bin/teLeap: Warning!
+Illegal CONECT record in pdb file
+
+/usr/local/amber18/bin/teLeap: Warning!
+Illegal CONECT record in pdb file
+
+/usr/local/amber18/bin/teLeap: Warning!
+Illegal CONECT record in pdb file
+
+/usr/local/amber18/bin/teLeap: Warning!
+Illegal CONECT record in pdb file
+
+/usr/local/amber18/bin/teLeap: Warning!
+Illegal CONECT record in pdb file
+
+/usr/local/amber18/bin/teLeap: Warning!
+Illegal CONECT record in pdb file
+  total atoms in file: 4485
+  Leap added 8 missing atoms according to residue templates:
+       8 H / lone pairs
+> membrane = loadpdb ./membrane_build/POPC_CHL_amber.pdb
+Loading PDB file: ./membrane_build/POPC_CHL_amber.pdb
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 1 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 1 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 2 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 2 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 3 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 3 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 4 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 4 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 5 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 5 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 6 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 6 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 7 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 7 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 8 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 8 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 9 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 9 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 10 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 10 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 11 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 11 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 12 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 12 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 13 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 13 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 14 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 14 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 15 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 15 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 16 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 16 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 17 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 17 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 18 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 18 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 19 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 19 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 20 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 20 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 21 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 21 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 22 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 22 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 23 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 23 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 24 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 24 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 25 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 25 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 26 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 26 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 27 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 27 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 28 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 28 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 29 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 29 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 30 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 30 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 31 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 31 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 32 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 32 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 33 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 33 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 34 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 34 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 35 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 35 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 36 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 36 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 37 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 37 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 38 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 38 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 39 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 39 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 40 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 40 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 41 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 41 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 42 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 42 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 43 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 43 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 44 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 44 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 45 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 45 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 46 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 46 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 47 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 47 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 48 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 48 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 49 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 49 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 50 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 50 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 51 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 51 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 52 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 52 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 53 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 53 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 54 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 54 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 55 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 55 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 56 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 56 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 57 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 57 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 58 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 58 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 59 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 59 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 60 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 60 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 61 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 61 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 62 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 62 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 63 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 63 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 64 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 64 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 65 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 65 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 66 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 66 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 67 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 67 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 68 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 68 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 69 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 69 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 70 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 70 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 71 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 71 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 72 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 72 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 73 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 73 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 74 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 74 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 75 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 75 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 76 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 76 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 77 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 77 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 78 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 78 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 79 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 79 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 80 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 80 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 81 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 81 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 82 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 82 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 83 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 83 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 84 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 84 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 85 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 85 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 86 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 86 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 87 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 87 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 88 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 88 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 89 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 89 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 90 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 90 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 91 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 91 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 92 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 92 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 93 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 93 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 1 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 1 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 2 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 2 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 3 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 3 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 4 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 4 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 5 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 5 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 6 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 6 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 7 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 7 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 8 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 8 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 9 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 9 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 10 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 10 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 11 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 11 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 12 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 12 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 13 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 13 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 14 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 14 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 15 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 15 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 16 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 16 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 17 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 17 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 18 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 18 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 19 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 19 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 20 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 20 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 21 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 21 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 22 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 22 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 23 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 23 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 24 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 24 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 25 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 25 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 26 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 26 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 27 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 27 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 28 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 28 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 29 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 29 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 30 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 30 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 31 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 31 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 32 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 32 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 33 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 33 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 34 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 34 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 35 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 35 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 36 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 36 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 37 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 37 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 38 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 38 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 39 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 39 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 40 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 40 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 41 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 41 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 42 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 42 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 43 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 43 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 44 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 44 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 45 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 45 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 46 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 46 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 47 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 47 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 48 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 48 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 49 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 49 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 50 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 50 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 51 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 51 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 52 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 52 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 53 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 53 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 54 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 54 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 55 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 55 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 56 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 56 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 57 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 57 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 58 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 58 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 59 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 59 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 60 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 60 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 61 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 61 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 62 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 62 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 63 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 63 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 64 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 64 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 65 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 65 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 66 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 66 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 67 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 67 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 68 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 68 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 69 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 69 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 70 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 70 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 71 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 71 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 72 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 72 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 73 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 73 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 74 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 74 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 75 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 75 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 76 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 76 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 77 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 77 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 78 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 78 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 79 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 79 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 80 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 80 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 81 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 81 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 82 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 82 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 83 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 83 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 84 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 84 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 85 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 85 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 86 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 86 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 87 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 87 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 88 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 88 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 89 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 89 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 90 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 90 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 91 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 91 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 92 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 92 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 93 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 93 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 94 ;
+this residue is split into PA and PC.
+
+/usr/local/amber18/bin/teLeap: Warning!
+Name change in pdb file residue 94 ;
+this residue is split into PC and OL.
+
+/usr/local/amber18/bin/teLeap: Note.
+374 residues had naming warnings.
+Thus, there are split residues;
+residue sequence numbers will not correspond to those in the pdb.
+Matching PDB residue names to LEaP variables.
+  total atoms in file: 58305
+> rism_wat = loadpdb  ./system_pdb/m2_rism_sele.pdb
+Loading PDB file: ./system_pdb/m2_rism_sele.pdb
+Matching PDB residue names to LEaP variables.
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+  total atoms in file: 64
+  Leap added 128 missing atoms according to residue templates:
+       128 H / lone pairs
+> system=combine{ receptor drug membrane rism_wat }
+  Sequence: default_name
+  Sequence: default_name
+  Sequence: default_name
+  Sequence: default_name
+> set system box {85.266 85.285 94.169 }
+> saveamberparm system m2_IXO.prmtop m2_IXO.inpcrd
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ ** Warning: No sp2 improper torsion term for  NA-CA-CN-CB
+        atoms are: NE1 CZ2 CE2 CD2
+ ** Warning: No sp2 improper torsion term for  C*-CN-CB-CA
+        atoms are: CG CE2 CD2 CE3
+ ** Warning: No sp2 improper torsion term for  NA-CA-CN-CB
+        atoms are: NE1 CZ2 CE2 CD2
+ ** Warning: No sp2 improper torsion term for  C*-CN-CB-CA
+        atoms are: CG CE2 CD2 CE3
+ ** Warning: No sp2 improper torsion term for  NA-CA-CN-CB
+        atoms are: NE1 CZ2 CE2 CD2
+ ** Warning: No sp2 improper torsion term for  C*-CN-CB-CA
+        atoms are: CG CE2 CD2 CE3
+ ** Warning: No sp2 improper torsion term for  NA-CA-CN-CB
+        atoms are: NE1 CZ2 CE2 CD2
+ ** Warning: No sp2 improper torsion term for  C*-CN-CB-CA
+        atoms are: CG CE2 CD2 CE3
+ ** Warning: No sp2 improper torsion term for  NA-CA-CN-CB
+        atoms are: NE1 CZ2 CE2 CD2
+ ** Warning: No sp2 improper torsion term for  C*-CN-CB-CA
+        atoms are: CG CE2 CD2 CE3
+ ** Warning: No sp2 improper torsion term for  NA-CA-CN-CB
+        atoms are: NE1 CZ2 CE2 CD2
+ ** Warning: No sp2 improper torsion term for  C*-CN-CB-CA
+        atoms are: CG CE2 CD2 CE3
+ ** Warning: No sp2 improper torsion term for  NA-CA-CN-CB
+        atoms are: NE1 CZ2 CE2 CD2
+ ** Warning: No sp2 improper torsion term for  C*-CN-CB-CA
+        atoms are: CG CE2 CD2 CE3
+ ** Warning: No sp2 improper torsion term for  NA-CA-CN-CB
+        atoms are: NE1 CZ2 CE2 CD2
+ ** Warning: No sp2 improper torsion term for  C*-CN-CB-CA
+        atoms are: CG CE2 CD2 CE3
+ ** Warning: No sp2 improper torsion term for  NA-CA-CN-CB
+        atoms are: NE1 CZ2 CE2 CD2
+ ** Warning: No sp2 improper torsion term for  C*-CN-CB-CA
+        atoms are: CG CE2 CD2 CE3
+ total 1682 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CHL	20
+	CMET	1
+	IXO	1
+	NLYS	1
+	WAT	10638
+  )
+ (no restraints)
+> savepdb system m2_IXO.pdb
+Writing pdb file: m2_IXO.pdb
+   printing CRYST1 record to PDB file with box info
+
+/usr/local/amber18/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NLYS -> LYS
+
+/usr/local/amber18/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CMET -> MET
+> quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 384; Notes = 1.

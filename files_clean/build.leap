@@ -10,7 +10,7 @@ receptor = loadpdb ./system_pdb/m2_prep.pdb
 membrane = loadpdb ./membrane_build/POPC_CHL_amber.pdb
 rism_wat = loadpdb  ./system_pdb/m2_rism_sele.pdb
 system=combine{ receptor drug membrane rism_wat }
-set system box {84.868 85.023 93.938 }
+set system box {85.266 85.285 94.169 }
 saveamberparm system m2_IXO.prmtop m2_IXO.inpcrd
 savepdb system m2_IXO.pdb
 quit

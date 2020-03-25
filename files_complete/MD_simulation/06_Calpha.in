@@ -1,0 +1,17 @@
+ pro 1ns LIPID 303K alpha carbons only 
+ &cntrl
+   imin=0, ntx=5, irest=1, 
+   ntc=2, ntf=2, tol=0.0000001,
+   nstlim=500000, ntt=3, gamma_ln=1.0,
+   temp0=303.0,
+   ntpr=5000, ntwr=500000, ntwx=5000,
+   dt=0.002, ig=-1,
+   ntr=1, ntb=2, cut=10.0, ioutfm=1, ntxo=2,
+   ntp=3, csurften=3, gamma_ten=0.0, ninterface=2, 
+   restraint_wt=5.0, restraintmask=':IXO | @CA'
+ /
+ /
+ &ewald
+  skinnb=3.0,
+ /
+

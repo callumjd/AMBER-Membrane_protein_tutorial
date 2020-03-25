@@ -1,0 +1,4 @@
+parm m2_IXO.prmtop 
+HMassRepartition 
+outparm m2_IXO.hmass.prmtop 
+quit

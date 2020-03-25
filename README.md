@@ -110,7 +110,7 @@ This final step is personal preference: PACKMOL-Memgen often slightly shifts the
 
 So, we need to extract just the membrane & water from "bilayer_m2_prep.pdb" and reset the coordinates to match those of "../system_pdb/m2_prep.pdb". You can use the "shift_membrane.py" script for this:
 
-> ./shift_membrane.py -i ../start_pdb/m2_prep.pdb -m bilayer_m2_prep.pdb -o POPC_CHL_amber.pdb
+> ./shift_membrane.py -i ../system_pdb/m2_prep.pdb -m bilayer_m2_prep.pdb -o POPC_CHL_amber.pdb
 
 The flags here are:
 
@@ -120,16 +120,15 @@ The flags here are:
 
 This will output:
 
->Original protein 1 COM: 0.655 -0.017 -3.809  
+> Original protein 1 COM: 0.655 -0.017 -3.809  
 >  
->Shifted protein 2 COM: -6.487 5.690 -3.809  
+> Shifted protein 2 COM: -6.487 5.690 -3.809  
 >  
->Writing POPC_CHL_amber.pdb membrane, shifted by  7.142 -5.707 0.000  
+> Writing POPC_CHL_amber.pdb membrane, shifted by  7.142 -5.707 0.000  
 >  
->Box X, Y, Z: 84.868 85.023 93.938  
->  
+> Box X, Y, Z: 85.266 85.285 94.169  
 
-Here, the final line gives us the box dimensions of the water layer.
+Here, the final line gives us the box dimensions of the water layer (the box dimensions may differ with separate PACKMOL-Memgen runs).
 
 One note: since our iperoxo ligand has a +1 charge, we need to delete a single Na+ ion from the "POPC_CHL_amber.pdb" PDB file. You can use a text editor to simply remove the first Na+.
 
@@ -141,7 +140,7 @@ Now, we have all the files needed to build the parameter and topology file with 
 
 The "build.leap" file is included. You will see that we have put the box dimensions from the previous step in here:
 
-> set system box {84.868 85.023 93.938 }
+> set system box {85.266 85.285 94.169 }
 
 Take care to understand each line. It is similar to building other systems with AMBER. Now, run tleap:
 

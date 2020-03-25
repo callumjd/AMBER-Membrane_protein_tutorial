@@ -1,0 +1,80 @@
+03/25/2020 04:44:01 PM:DEBUG:
+Execution line:     /usr/local/amber18/bin/packmol-memgen --pdb ../system_pdb/m2_prep.pdb --lipids POPC:CHL1 --ratio 9:1 --preoriented --salt --salt_c Na+ --saltcon 0.15 --dist 10 --dist_wat 15 --notprotonate --nottrim
+03/25/2020 04:44:02 PM:INFO:
+Preprocessing ../system_pdb/m2_prep.pdb. This might take a minute.
+03/25/2020 04:44:02 PM:DEBUG:
+Estimating the volume by building a grid (PDBREMIX)...
+03/25/2020 04:44:14 PM:DEBUG:
+
+    Estimated values for input protein:
+    
+    Input PDB                = ../system_pdb/m2_prep.pdb
+    Charge                   = 10        
+    Mass                     = 31266        Da
+    Density                  = 0.86         Da/A^3 
+    Estimated volume         = 28220.0      A^3
+        in upper leaflet     = 11705.0      A^3
+        in lower leaflet     = 12821.0      A^3
+        in upper water box   = 218.0        A^3
+        in lower water box   = 3476.0       A^3
+                
+03/25/2020 04:44:14 PM:INFO:
+ 
+    Information for packing:
+    
+    Input PDB(s)                     = ['../system_pdb/m2_prep.pdb']
+    Output PDB                       = bilayer_m2_prep.pdb
+    Packmol output and log prefix    = packmol  
+    Lipids                           = ['POPC:CHL1']
+    Lipid ratio                      = ['9:1']  
+    Salt concentration (M)           = 0.15     
+    Distance to boundaries           = 10.0     
+    Minimum water distance           = 15.0     
+    Packmol loops                    = 20       
+    Packmol loops for All-together   = 100      
+03/25/2020 04:44:14 PM:DEBUG:
+
+    Box information:
+    x_min                    = -41.8687766583    
+    x_max                    = 41.8687766583   
+    x_len                    = 83.7375533166
+    
+    y_min                    = -41.8687766583    
+    y_max                    = 41.8687766583    
+    y_len                    = 83.7375533166
+    
+    z_min                    = -50.535      
+    z_max                    = 41.069   
+    z_len                    = 91.604   
+    
+03/25/2020 04:44:14 PM:DEBUG:
+Experimental value for POPC volume not available in parm file. Using estimated 1227 A^3 instead...
+03/25/2020 04:44:14 PM:DEBUG:
+
+            Salt and charge info:
+            Upper positive charges   = 6         
+            Lower positive charges   = 12           
+            Upper negative charges   = 10            
+            Lower negative charges   = 18           
+            Charge imbalance         = 0        
+            Upper salt number        = 11           
+            Lower salt number        = 17           
+            
+03/25/2020 04:44:14 PM:DEBUG:
+
+                Lower water box vol    = 189598.81 A^3
+                Upper water box vol    = 126481.43 A^3
+                Mem. upper leaflet vol = 157366.35 A^3
+                Mem. lower leaflet vol = 156250.35 A^3
+                
+                
+03/25/2020 04:44:14 PM:DEBUG:
+Script for packmol written to packmol.inp
+03/25/2020 04:44:14 PM:INFO:
+
+Running Packmol...
+03/25/2020 04:45:30 PM:DEBUG:
+
+Individual packing processes complete. Initiating all-together packing. This might take a while!
+03/25/2020 04:56:15 PM:INFO:
+Transforming to AMBER

@@ -1,0 +1,5 @@
+trajin 07_Prod_m2_IXO.nc
+trajin 08_Long_m2_IXO.nc
+center mass origin @CA
+image center origin familiar
+trajout image.nc netcdf
