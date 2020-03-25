@@ -61,14 +61,14 @@ Now we need to prepare the ixperoxo agonist.
 
 > cd ../ligand_params
 
-Again, I am using MOE to add hydrogens to the initial ligand coordinates, set charge state, correct the bond orders. The output is "ixo_ligand.mol2". You will need to do similar, using a method of your choice.
+Again, I am using MOE to add hydrogens to the initial ligand coordinates, set charge state, correct bond orders. The output is "ixo_ligand.mol2". You will need to do similar, using a method of your choice.
 
 We then determine partial charges and atom types for GAFF2 using antechamber:
 
 > antechamber -i ixo_ligand.mol2 -fi mol2 -o IXO.mol2 -fo mol2 -c bcc -s 2 -nc 1 -rn IXO -at gaff2  
 > parmchk2 -i IXO.mol2 -f mol2 -o missing_gaff2.frcmod -at gaff2
 
-As a personal preferene, I typically generate a "clean" ligand PDB file and AMBER .off file containing force field parameters:
+As a personal preference, I typically generate a "clean" ligand PDB file and AMBER .off file containing force field parameters:
 
 > antechamber -i IXO.mol2 -fi mol2 -o IXO.pdb -fo pdb  
 > tleap -f convert.leap  # this step simply converts the IXO.mol2 to IXO.off file
@@ -100,19 +100,19 @@ Take care to understand each of the flags. Here we ask for a mixed POPC/CHOL mem
 * "--ratio 9:1": POPC/CHOL ratio of 9:1 
 * "--preoriented": the OPM coordinates are already orientated along the z-axis, for membrane building
 * "--salt --salt_c Na+ --saltcon 0.15": Add 0.15 M of NaCl salt to the water layer
-* "--dist 10": minimum maxmin value for x,y,z to box boundary 
+* "--dist 10": minimum maxmin value for x, y, z to box boundary 
 * "--dist_wat 15": water layer thickness of 15 A
 * "--notprotonate --nottrim": do not process input receptor PDB file (since we have already prepared this)
 
-PACKMOL-Memgen should output a "bilayer_m2_prep.pdb" file, which contains our receptor and the prepared membrane+water box.
+PACKMOL-Memgen should output a "bilayer_m2_prep.pdb" file, which contains our receptor and the prepared membrane & water box.
 
 This final step is personal preference: PACKMOL-Memgen often slightly shifts the coordinates of the overall system versus the input receptor. Typically, I prefer to have the initial prepared receptor, ligand coordinates and separately, the membrane box PDB.
 
-So, we need to extract just the membrane+water from "bilayer_m2_prep.pdb" and reset the coordinates to match those of "../system_pdb/m2_prep.pdb". You can use the "shift_membrane.py" script for this:
+So, we need to extract just the membrane & water from "bilayer_m2_prep.pdb" and reset the coordinates to match those of "../system_pdb/m2_prep.pdb". You can use the "shift_membrane.py" script for this:
 
 > ./shift_membrane.py -i ../start_pdb/m2_prep.pdb -m bilayer_m2_prep.pdb -o POPC_CHL_amber.pdb
 
-The settings here:
+The flags here are:
 
 * "-i ../start_pdb/m2_prep.pdb": our original receptor PDB
 * "-m bilayer_m2_prep.pdb": output membrane system from PACKMOL-Memgen
@@ -126,7 +126,7 @@ This will output:
 >  
 >Writing POPC_CHL_amber.pdb membrane, shifted by  7.142 -5.707 0.000  
 >  
->Box X,Y,Z: 84.868 85.023 93.938  
+>Box X, Y, Z: 84.868 85.023 93.938  
 >  
 
 Here, the final line gives us the box dimensions of the water layer.
@@ -172,7 +172,7 @@ Go into the "MD_simulation" directory:
 
 > cd ./MD_simulation
 
-This folder contains input files and a bash script for the each step on a single GPU with pmemd.cuda. You may need to modify for your own machine / cluster.
+This folder contains input files and a bash script ("run_MD.sh") for the each step on a single GPU with pmemd.cuda. You may need to modify for your own machine / cluster.
 
 The simulation steps are as follows:
 

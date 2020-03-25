@@ -6,12 +6,9 @@ import argparse
 import numpy as np
 
 ################################################################################
-# com_placement. Run as:
-# ./com_placement.py -i bilayer.pdb -d drug_to_place.pdb -z point_along_z 
 #
-# IMPORTANT: Membrane bilayer center of mass is defined by N31 head group atoms.
-# If your membrane does not contain these atom types, or you want to define
-# using other/all atoms of the membrane, you will have to update the code.
+# shift_membrane. Run as:
+# ./shift_membrane.py -i original_protein.pdb -m bilayer.pdb -o output_name.pdb 
 #
 ################################################################################
 
@@ -179,5 +176,5 @@ with open(output_file,'w') as f_out:
 
 box_dimensions=get_wat_size(membrane_file)
 
-print('Box X,Y,Z: %.3f %.3f %.3f\n' % (box_dimensions.x,box_dimensions.y,box_dimensions.z))
+print('Box X, Y, Z: %.3f %.3f %.3f\n' % (box_dimensions.x,box_dimensions.y,box_dimensions.z))
 
