@@ -132,7 +132,7 @@ Here, the final line gives us the box dimensions of the water layer (the box dim
 
 One note: since our iperoxo ligand has a +1 charge, we need to delete a single Na+ ion from the "POPC_CHL_amber.pdb" PDB file. You can use a text editor to simply remove the first Na+.
 
-# Step 4: Build the AMBER parameter and topology file with leap
+# Step 4: Build the AMBER topology and coordinate files with leap
 
 Now, we have all the files needed to build the parameter and topology file with tleap:
 
@@ -142,7 +142,9 @@ The "build.leap" file is included. You will see that we have put the box dimensi
 
 > set system box {85.266 85.285 94.169 }
 
-Take care to understand each line. It is similar to building other systems with AMBER. Now, run tleap:
+You may need to update this line with the box size of your own membrane box.
+
+Take care to understand each line of the build.leap file. It is similar to building other systems with AMBER. Now, run tleap:
 
 > tleap -f build.leap
 
