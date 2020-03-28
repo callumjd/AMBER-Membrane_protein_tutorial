@@ -193,4 +193,7 @@ Once simulations are complete, we can do some simple analysis of the M2 receptor
 
 This creates an imaged trajectory from the 07_Prod and 08_Long steps, then determines the protein RMSD and ligand RMSD over the course of these simulation steps. We can plot the results as shown:
 
+![Alt text](/figures/rmsd_plot.png?raw=true "RMSD")
+
+The M2 receptor has RMSD hovering around 2.5 A (using carbon-alpha atoms), whereas the iperoxo agonist is more stable, with RMSD 1 - 1.5 A. These results are acceptable and indicate a stable simulation.
 
