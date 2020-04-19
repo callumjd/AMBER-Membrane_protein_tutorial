@@ -57,7 +57,7 @@ We need to prepare the M2 receptor for molecular dynamics with AMBER. You may ha
 
 I will not go further on the preparation here - needless to say, you need a prepared receptor for further simulation steps. The output from MOE is provided as "m2_prep.pdb". Side-chain protonation states are set to their dominate form at pH 7.4, except ASP69 inside the helical bundle, which is charge neutral ("ASH" residue name, as AMBER convention). ASP69 is protonated during the entire photocycle in rhodopsin (https://www.pnas.org/content/90/21/10206.long).
 
-Now we need to prepare the ixperoxo agonist.
+Now we need to prepare the iperoxo agonist.
 
 > cd ../ligand_params
 
