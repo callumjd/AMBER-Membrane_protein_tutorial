@@ -1,7 +1,7 @@
 source leaprc.protein.ff19SB
 source leaprc.water.tip3p
 source leaprc.gaff2
-source leaprc.lipid20
+source leaprc.lipid21
 loadamberparams frcmod.ionsjc_tip3p
 loadamberparams ./ligand_params/missing_gaff2.frcmod
 loadoff ./ligand_params/IXO.off
