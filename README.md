@@ -1,6 +1,6 @@
 # AMBER-Membrane_protein_tutorial
 
-Tutorial on the setup and simulation of a membrane protein with AMBER Lipid20 and PACKMOL-Memgen
+Tutorial on the setup and simulation of a membrane protein with AMBER Lipid21 and PACKMOL-Memgen
 
 ![Alt text](/figures/m2_setup.png?raw=true "M2_IXO")
 
