@@ -201,7 +201,8 @@ The M2 receptor has RMSD hovering around 2.5 A (using carbon-alpha atoms), where
 
 A recent study has found that large membrane patches buckle using the Monte Carlo barostat, whilst smaller patches show a systematic depression of the area per lipid:
 * Gomez et al "Taking the Monte-Carlo gamble: How not to buckle under the pressure!" https://onlinelibrary.wiley.com/doi/full/10.1002/jcc.26798
-The buckling behaviour is correct using a force-switch for non-bonded interactions.
+
+The buckling behaviour is corrected using a force-switch for non-bonded interactions.
 
 The area per lipid depression is also found with Lipid21. However, POPC remains near to the experimental area per lipid. The Berendsen barostat is thus preferable over the Monte Carlo barostat when simulation time allows.
 * Dickson et al "Lipid21: Complex Lipid Membrane Simulations with AMBER" https://pubs.acs.org/doi/10.1021/acs.jctc.1c01217
