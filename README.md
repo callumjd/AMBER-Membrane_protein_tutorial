@@ -11,6 +11,7 @@ Tutorial on the setup and simulation of a membrane protein with AMBER Lipid21 an
 * AMBER20
 * Python 3.6 (https://www.continuum.io/downloads)
 * I use the CCG MOE GUI for protein preparation (add hydrogens, cap termini, set protonation states). You may have access to MOE or a similar GUI/tool to achieve the same task. PACKMOL-Memgen also has prep options.
+* [Lipid21](http://ambermd.org/AmberModels_lipids.php): This tutorial can be run with older lipid force fields (Lipid17). If you wish to use Lipid21, this will be released with Amber22. In the meantime, you can download lipid21 [here](http://ambermd.org/AmberModels_lipids.php) or [here](https://github.com/callumjd/lipid21).
 
 # Files
 You can download this tutorial from github, the resulting zip file will not have any trajectories from the MD simulations described below due to file size limits. You may have to give the scripts executable permissions with chmod. Or runs scripts as:
