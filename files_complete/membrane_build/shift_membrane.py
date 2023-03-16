@@ -119,7 +119,7 @@ membrane_file=None
 output_file=None
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-i", type=str, help="Oiriginal input receptor PDB file",required=True)
+parser.add_argument("-i", type=str, help="Original input receptor PDB file",required=True)
 parser.add_argument("-m",  type=str, help="Packmol-memgen generated protein+membrane PDB to shift",required=True)
 parser.add_argument("-o", type=str, help="Output name of PDB",required=True)
 
